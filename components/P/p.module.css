@@ -1,0 +1,42 @@
+.p {
+	margin: 0;
+
+	font-weight: normal;
+	font-style: normal;
+}
+
+.small {
+	font-family: var(--font-family);
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 24px;
+}
+
+.medium {
+	color: #3B434E;
+
+	font-family: var(--font-family);
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 24px;
+}
+
+.large {
+	color: #3B434E;
+
+	font-family: var(--font-family);
+	font-size: 18px;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 29px;
+}
+
+.black {
+	color: var(--black);
+}
+
+.white {
+	color: var(--white);
+}
