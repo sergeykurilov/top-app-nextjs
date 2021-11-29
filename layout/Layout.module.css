@@ -1,6 +1,7 @@
 .wrapper {
 	display: grid;
 	grid-template-rows: auto 1fr auto;
+	gap: 0 30px;
 
 	min-height: 100vh;
 	grid-template-columns: auto 230px minmax(320px, 1200px) auto;
@@ -27,7 +28,15 @@
 }
 
 .footer {
+	display: grid;
+	justify-content: center;
+
+	background: #7653FC;
 	grid-area: footer;
+	grid-gap: 40px;
+	gap: 40px;
+	grid-template-areas: "rights agreement confidential";
+	grid-auto-columns: 50% 18% 18%;
 }
 
 @media (max-width: 765px) {
@@ -37,6 +46,13 @@
 			"body"
 			"footer";
 		grid-template-columns: minmax(320px, 1200px);
+	}
+
+	.footer {
+		grid-template-areas:
+			"rights"
+			"agreement"
+			"confidential";
 	}
 
 	.sidebar {

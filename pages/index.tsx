@@ -1,7 +1,7 @@
 import {Button, Htag, Rating, Tag} from "../components";
 import {P} from "../components";
 import {useEffect, useState} from "react";
-import {Layout, withLayout} from "../layout/Layout";
+import {withLayout} from "../layout/Layout";
 
 
 function Home(): JSX.Element {
