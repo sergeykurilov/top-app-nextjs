@@ -1,10 +1,10 @@
-import {TopPageComponentProps} from "./TopPageComponent.props";
-import {Htag, Tag} from "../../components";
+import { TopPageComponentProps } from "./TopPageComponent.props";
+import { Htag, Tag } from "../../components";
 import styles from './TopPageComponent.module.css';
-import {HhData} from "../../components/HhData/HhData";
-import {TopLevelCategory} from "../../interfaces/page.interface";
+import { HhData } from "../../components/HhData/HhData";
+import { TopLevelCategory } from "../../interfaces/page.interface";
 
-export const TopPageComponent = ({page, products, firstCategory}: TopPageComponentProps): JSX.Element => {
+export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
 
     return (
         <div className={styles.wrapper}>
