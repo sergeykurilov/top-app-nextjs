@@ -5,6 +5,8 @@
 	align-items: baseline;
 	justify-items: left;
 	gap: 20px;
+
+	margin-bottom: 30px;
 }
 
 .hhTitle {
