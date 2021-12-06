@@ -1,0 +1,149 @@
+.product {
+	display: grid;
+	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
+
+	margin-bottom: 30px;
+	padding: 40px;
+}
+
+.logo {
+	grid-column: start / logoend;
+	grid-row: 1 / span 2;
+}
+
+.title,
+.tags {
+	grid-column: titlestart / middle;
+}
+
+.price,
+.priceTitle {
+	grid-column: pricestart / priceend;
+}
+
+.credit,
+.creditTitle {
+	grid-column: creditstart / creditend;
+}
+
+.rating,
+.rateTitle {
+	grid-column: ratestart / end;
+}
+
+.hr,
+.description,
+.actions {
+	grid-column: start / end;
+}
+
+.feature {
+	grid-column: start / middle;
+}
+
+.advBlock {
+	grid-column: middle / end;
+}
+
+.logo img {
+	border-radius: 5px;
+}
+
+.title {
+	align-self: flex-end;
+
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 27px;
+}
+
+.price,
+.credit {
+	align-self: flex-end;
+
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 27px;
+}
+
+.description {
+	margin-bottom: 15px;
+
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.reviewButton {
+	margin-left: 20px;
+}
+
+.category {
+	margin-top: 7px;
+}
+
+.month {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.oldPrice {
+	margin-left: 5px;
+}
+
+.rating {
+	align-self: flex-end;
+}
+
+.priceTitle,
+.creditTitle,
+.rateTitle {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 19px;
+}
+
+.advBlock {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.advTitle {
+	margin-bottom: 5px;
+
+	font-weight: bold;
+}
+
+.advantages {
+	margin-bottom: 20px;
+	padding-left: 15px;
+
+	border-left: 2px solid var(--green);
+}
+
+.disadvantages {
+	padding-left: 15px;
+
+	border-left: 2px solid var(--red);
+}
+
+.characteristics {
+	display: grid;
+	align-items: baseline;
+
+	padding-right: 60px;
+	gap: 10px;
+
+	font-size: 16px;
+	line-height: 32px;
+	grid-template-columns: auto 1fr auto;
+}
+
+.characteristicsName {
+	font-weight: bold;
+}
+
+.characteristicsDots {
+	margin-bottom: 5px;
+
+	border-bottom: 1px dashed var(--gray-light);
+}

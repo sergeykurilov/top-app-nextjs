@@ -8,7 +8,7 @@ function Search(): JSX.Element {
 
     return (
         <>
-           ыыы
+           Search
         </>
     );
 }

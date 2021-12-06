@@ -2,9 +2,9 @@
 	display: inline-block;
 
 	box-sizing: border-box;
-	margin-bottom: 5px;
+	margin-right: 5px;
 
-	border-radius: 5px;
+	border-radius: 20px;
 }
 
 .s {
@@ -34,7 +34,7 @@
 
 .grey {
 	color: var(--white);
-	background: #B3C0D9;
+	background: #51648C;
 
 	font-weight: bold;
 }

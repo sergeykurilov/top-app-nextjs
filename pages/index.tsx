@@ -1,4 +1,4 @@
-import {Button, Htag, Rating, Tag} from "../components";
+import {Button, Htag, Input, Rating, Tag, TextArea} from "../components";
 import {P} from "../components";
 import {useEffect, useState} from "react";
 import {withLayout} from "../layout/Layout";
@@ -41,6 +41,9 @@ function Home({menu}: HomeProps): JSX.Element {
           return <li key={m._id.secondCategory}>{m._id.secondCategory}</li>;
         })}
       </ul>
+      <Input placeholder='test'/>
+      <hr/>
+      <TextArea placeholder='test'/>
     </>
   );
 }
