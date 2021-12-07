@@ -119,6 +119,10 @@
 	font-weight: bold;
 }
 
+.rateTitle a {
+	color: var(--primary);
+}
+
 .advantages {
 	margin-bottom: 20px;
 	padding-left: 15px;

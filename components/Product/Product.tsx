@@ -7,13 +7,23 @@ import {Button, Devider, Review, ReviewForm} from "..";
 import {devlOfNum, priceRu} from "../../helpers/helpers";
 import Image from 'next/image';
 import cn from "classnames";
-import {useState} from "react";
+import {useRef, useState} from "react";
 
 export const Product = ({product, className, ...props}: ProductProps): JSX.Element => {
     const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
+    const reviewRef = useRef<HTMLDivElement>(null);
+
+
+    const scrollToReview = () => {
+        setIsReviewOpened(true);
+        reviewRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+    };
 
     return (
-        <>
+        <div className={className} {...props}>
             <Card className={styles.product}>
                 <div className={styles.logo}>
                     <Image
@@ -37,7 +47,7 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
                 <div className={styles.priceTitle}>цена</div>
                 <div className={styles.creditTitle}>кредит</div>
                 <Devider className={styles.hr}/>
-                <div className={styles.rateTitle}>{product.reviewCount} {devlOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</div>
+                <a href="#ref" onClick={scrollToReview}><div className={styles.rateTitle}>{product.reviewCount} {devlOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</div></a>
                 <div className={styles.description}>{product.description} отзывов</div>
                 <div className={styles.feature}>
                     {product.characteristics.map(c => (
@@ -73,7 +83,7 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
             <Card color='blue' className={cn(styles.reviews,{
                 [styles.opened]: isReviewOpened,
                 [styles.closed]: !isReviewOpened,
-            })}>
+            })} ref={reviewRef}>
                 {product.reviews.map(r => (
                     <div  key={r._id}>
                         <Review review={r}/>
@@ -82,7 +92,7 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
                 ))}
                 <ReviewForm productId={product._id}/>
             </Card>
-        </>
+        </div>
 
     );
 };
