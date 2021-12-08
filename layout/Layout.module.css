@@ -13,8 +13,6 @@
 
 .header {
 	grid-area: header;
-
-	display: none;
 }
 
 .sidebar {
@@ -45,7 +43,8 @@
 			"header"
 			"body"
 			"footer";
-		grid-template-columns: minmax(320px, 1200px);
+		grid-template-columns: minmax(320px, 1fr);
+		gap: 10px;
 	}
 
 	.footer {
@@ -62,8 +61,6 @@
 
 	.header {
 		grid-area: header;
-
-		display: block;
 	}
 
 	.body {

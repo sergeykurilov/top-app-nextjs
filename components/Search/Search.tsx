@@ -1,16 +1,15 @@
-import { SearchProps } from "./Search.props";
-import cn from 'classnames';
+import { SearchProps } from './Search.props';
 import styles from './Search.module.css';
-import { Button, Input } from "..";
-import { useState } from "react";
 import GlassIcon from './glass.svg';
-import {useRouter} from "next/router";
+import cn from 'classnames';
+import { Input } from '../Input/Input';
+import { Button } from '../Button/Button';
+import { useState, KeyboardEvent } from 'react';
+import { useRouter } from 'next/router';
 
 export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
-
     const [search, setSearch] = useState<string>('');
     const router = useRouter();
-
 
     const goToSearch = () => {
         router.push({
@@ -21,28 +20,29 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
         });
     };
 
-    const handleKeydown = (e: KeyboardEvent) => {
-        if(e.key == 'Enter'){
+    const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key == 'Enter') {
             goToSearch();
         }
     };
 
     return (
-        <div className={cn(className, styles.search)} {...props}>
+        <form className={cn(className, styles.search)} {...props} role="search">
             <Input
                 className={styles.input}
+                placeholder="Поиск..."
                 value={search}
-                placeholder='Поиск...'
                 onChange={(e) => setSearch(e.target.value)}
-                onKeyDown={handleKeydown}
+                onKeyDown={handleKeyDown}
             />
-
-            <Button appearance='primary'
+            <Button
+                appearance="primary"
                 className={styles.button}
                 onClick={goToSearch}
+                aria-label="Искать по сайту"
             >
                 <GlassIcon />
             </Button>
-        </div>
+        </form>
     );
 };

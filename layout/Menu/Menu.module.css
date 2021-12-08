@@ -33,7 +33,6 @@
 
 	font-size: 12px;
 	font-weight: 300;
-	line-height: 16px;
 }
 
 .secondBlock {
@@ -45,15 +44,7 @@
 }
 
 .secondLevelBlock {
-	display: none;
-}
-
-.secondLevelBlockOpen {
-	display: block;
-}
-
-.secondLevelBlockOpen:last-child {
-	margin-bottom: 20px;
+	overflow: hidden;
 }
 
 .thirdLevel {
@@ -64,6 +55,7 @@
 	cursor: pointer;
 
 	color: var(--gray-dark);
+	outline-offset: -1px;
 
 	font-size: 14px;
 	font-weight: 500;
